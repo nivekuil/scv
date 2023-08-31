@@ -1,0 +1,25 @@
+* SCV - Structured Configuration Vehicle
+Not released.  Unifies all configuration formats into Clojure maps
+with metadata attached.  Pass them around and do normal Clojure stuff
+with them, serializing them to their intended file format as late as
+possible.
+
+* Metadata keys
+  | name                | description                                                                                                 | default |
+  |---------------------+-------------------------------------------------------------------------------------------------------------+---------|
+  | :scv/format | See [[Formats]]                                                                                                 |         |
+  # | :scv/comment-prefix | if the format does not have a comment syntax defined, lines starting with this string will be treated as comments | "#"     |
+  |                     |                                                                                                             |         |
+
+* Formats
+| type            | description                                                         | example use                            |
+|-----------------+---------------------------------------------------------------------+----------------------------------------|
+| flags--         |                                                                     | {:a 1 :b [1 2]} -> "--a=1 --b=1 --b=2" |
+| flags-          |                                                                     |                                        |
+| conf-unix       | Each column is one k/v level.  Duplicate keys become {key [values]} | systemd services, sshd_config          |
+| toml            |                                                                     |                                        |
+| yaml            | Superset of JSON, just use =:json=                                  |                                        |
+| edn             |                                                                     |                                        |
+| xml             |                                                                     |                                        |
+| hcl             |                                                                     |                                        |
+| java-properties |                                                                     |                                        |
