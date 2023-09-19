@@ -1,0 +1,3 @@
+[submodule "vendor/clj-hcl"]
+	path = vendor/clj-hcl
+	url = https://github.com/viesti/clj-hcl
